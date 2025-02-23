@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Landing Page</title>
+
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon-16x16.png" />
+  </head>
+  <body>
+    <nav id="nav" class="navigation">
+      <a class="logo-container" href="#"><img class="logo" src="assets/images/autodoc-logo.png" alt="AutoDoc - logo" /></a>
+
+      <div class="navigation-content">
+        <a href="#content">Content</a>
+        <a href="#tools">Tools</a>
+      </div>
+
+      <div class="navigation-buttons">
+        <a id="getStarted" href="#">Get Started</a>
+        <a id="authentication" href="#">Log in</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <div class="hero-section padding-container">
+      <div class="container">
+        <div class="hero-content">
+          <h1 class="heading-main">AutoDoc – A place to:</h1>
+          <ul>
+            <li>Automate your document workflow</li>
+            <li>Generate and manage contracts with ease</li>
+            <li>Securely collaborate and sign online</li>
+          </ul>
+          <a class="btn" href="# ">Get started -></a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Content -->
+    <div id="content" class="container padding-container">
+      <h1 class="heading">Creating documents has never been easier</h1>
+      <p class="text">Say goodbye to manual paperwork. AutoDoc helps you draft, edit, and generate documents effortlessly—saving time and reducing errors.</p>
+      <div class="media-container">
+        <video
+          autoplay
+          playsinline
+          loop
+          src="https://cdn.spline.design/_assets/_videos/spline_beta_release.mp4"
+          poster="assets/images/authentication-background.png"
+          width="1080"
+          height="634"></video>
+      </div>
+    </div>
+
+    <!-- Features -->
+    <div id="features" class="container padding-container">
+      <div class="flex-container">
+        <h1 class="heading">Tools to ease document creation</h1>
+      </div>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>@ AutoDoc</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const nav = document.getElementById("nav");
+        const { top: positionTop } = nav.getBoundingClientRect();
+
+        window.addEventListener("scroll", (e) => {
+          if (window.scrollY > positionTop) {
+            nav.classList.add("scrolled");
+          } else {
+            nav.classList.remove("scrolled");
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

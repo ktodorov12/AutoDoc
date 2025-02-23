@@ -1,0 +1,363 @@
+/*=========== TABLE OF CONTENTS ===========
+1. General css
+    1.1. Utilitty classes
+2. Nav Bar
+3. Footer
+4. Hero section
+5. Content
+==========================================*/
+
+/* ////////COLORS//////////////////////////// */
+:root {
+  --text-50: #edf2f8;
+  --text-100: #dbe6f0;
+  --text-200: #b7cce1;
+  --text-300: #92b2d3;
+  --text-400: #6e99c4;
+  --text-500: #4a7fb5;
+  --text-600: #3b6691;
+  --text-700: #2c4c6d;
+  --text-800: #1e3348;
+  --text-900: #0f1924;
+  --text-950: #070d12;
+
+  --background-50: #ebf2fa;
+  --background-100: #d6e5f5;
+  --background-200: #adcceb;
+  --background-300: #85b2e0;
+  --background-400: #5c99d6;
+  --background-500: #337fcc;
+  --background-600: #2966a3;
+  --background-700: #1f4c7a;
+  --background-800: #143352;
+  --background-900: #0a1929;
+  --background-950: #050d14;
+
+  --primary-50: #e9f2fb;
+  --primary-100: #d4e5f7;
+  --primary-200: #a8ccf0;
+  --primary-300: #7db2e8;
+  --primary-400: #5299e0;
+  --primary-500: #267fd9;
+  --primary-600: #1f66ad;
+  --primary-700: #174c82;
+  --primary-800: #0f3357;
+  --primary-900: #08192b;
+  --primary-950: #040d16;
+
+  --secondary-50: #e8f2fd;
+  --secondary-100: #d0e5fb;
+  --secondary-200: #a1ccf7;
+  --secondary-300: #72b2f3;
+  --secondary-400: #4399ef;
+  --secondary-500: #147feb;
+  --secondary-600: #1066bc;
+  --secondary-700: #0c4c8d;
+  --secondary-800: #08335e;
+  --secondary-900: #04192f;
+  --secondary-950: #020d17;
+
+  --accent-50: #e6f2ff;
+  --accent-100: #cde5fe;
+  --accent-200: #9bccfd;
+  --accent-300: #68b2fd;
+  --accent-400: #3699fc;
+  --accent-500: #047ffb;
+  --accent-600: #0366c9;
+  --accent-700: #024c97;
+  --accent-800: #023364;
+  --accent-900: #011932;
+  --accent-950: #000d19;
+
+  --box-shadow: 0 0.9px var(--1) -1px rgba(0, 0, 0, 0.08), 0 2.6px var(--2) -1px rgba(0, 0, 0, 0.06), 0 5.7px 12px -1px rgba(0, 0, 0, 0.05),
+    0 var(--4) var(--4) -1px rgba(0, 0, 0, 0.04);
+  --box-shadow-hover: 0 0.9px var(--1) -1px var(--adjacent-hover), 0 2.6px var(--2) -1px var(--adjacent-hover), 0 5.7px 12px -1px var(--adjacent-hover),
+    0 var(--4) var(--4) -1px var(--adjacent-hover);
+
+  --linearPrimarySecondary: linear-gradient(#3789dc, #81baf4);
+  --linearPrimaryAccent: linear-gradient(#3789dc, #3899fc);
+  --linearSecondaryAccent: linear-gradient(#81baf4, #3899fc);
+  --radialPrimarySecondary: radial-gradient(#3789dc, #81baf4);
+  --radialPrimaryAccent: radial-gradient(#3789dc, #3899fc);
+  --radialSecondaryAccent: radial-gradient(#81baf4, #3899fc);
+}
+
+:root {
+  /* Containers */
+  --container-width-main: 1536px;
+  --max-width-text: 41.625rem;
+
+  /* Sizes */
+  --ff: "Poppins", "sans-serif";
+  --heading: 3.76rem;
+  --subheading: 1.875rem;
+  --small-heading: 1.3rem;
+  --text: 1.3rem;
+  --links: 1rem;
+
+  --line-height-xl: 3.25rem;
+  --line-height-l: 2rem;
+  --line-height-m: 1.5rem;
+  --line-height-text: 1.25rem;
+
+  /* Padding and margins */
+  --border-radius: 3.125rem;
+  --border-padding: 0.625rem 1rem;
+  --btn-padding: 1rem 2.625rem;
+  --btn-radius: 0.75rem;
+  --margin-text: 1rem auto 2.5rem;
+
+  /* Widths and gaps */
+  --0-5: 0.125rem; /* 2px */
+  --1: 0.25rem; /* 4px */
+  --2: 0.5rem; /* 8px */
+  --2-5: 0.625rem; /* 10px */
+  --3: 0.75rem; /* 12px */
+  --4: 1rem; /* 16px */
+  --5: 1.25rem; /* 20px */
+  --6: 1.5rem; /* 24px */
+  --7: 1.75rem; /* 28px */
+  --8: 2rem; /* 32px */
+  --9: 2.25rem; /* 36px */
+  --10: 2.5rem; /* 40px */
+  --12: 3rem; /* 48px */
+  --16: 4rem; /* 64px */
+  --24: 6rem; /* 96px */
+}
+
+/*-------------------------------------
+	1. General css
+--------------------------------------*/
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: var(--ff);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: var(--height-VH-100);
+  font-family: var(--ff);
+  font-size: var(--text);
+  max-width: var(--width-VW);
+  background-color: var(--background-50);
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "Poppins";
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary-400);
+  position: relative;
+}
+
+ul li {
+  list-style-position: inside;
+  list-style: none;
+  line-height: var(--line-height-l);
+  font-size: var(--text);
+}
+
+ul li::before {
+  content: "✓";
+}
+
+textarea {
+  resize: none;
+}
+
+/*-------------------------------------
+	1.1. Utilitty classes
+--------------------------------------*/
+.container {
+  margin: 0 auto;
+  max-width: var(--container-width-main);
+  width: 100%;
+  height: 100%;
+}
+
+.padding-container {
+  padding-top: var(--12);
+  padding-bottom: var(--12);
+}
+
+.heading-main {
+  font-size: var(--heading);
+}
+
+.heading {
+  font-size: var(--subheading);
+  line-height: normal;
+  font-weight: 600;
+  text-align: center;
+}
+
+.text {
+  margin: var(--margin-text);
+  max-width: var(--max-width-text);
+  color: var(--text-500);
+  font-size: var(--text);
+  line-height: var(--line-height-l);
+  font-weight: 400;
+  text-align: center;
+}
+
+.btn {
+  transition: all 0.3s ease-in-out;
+  margin-top: var(--4);
+  display: inline-block;
+  color: var(--text-50);
+  background: var(--background-500);
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+  pointer-events: auto;
+  line-height: var(--line-height-text);
+}
+
+.btn:hover {
+  background-color: var(--background-700);
+  border-color: var(--accent-50);
+}
+
+/*-------------------------------------
+	2. Nav Bar
+--------------------------------------*/
+.navigation {
+  top: 5%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 40%; /*!!! Fix !!! */
+  position: fixed;
+  display: flex;
+  align-items: center;
+  gap: var(--2-5);
+  z-index: 1000;
+
+  transition: 0.3s ease-in-out;
+  font-weight: bold;
+  font-size: var(--links);
+  border-radius: var(--border-radius);
+  will-change: background;
+}
+
+.navigation.scrolled {
+  background-color: var(--background-200);
+}
+
+.navigation-content {
+  margin-right: auto;
+}
+
+.navigation-buttons {
+  margin: 0 var(--2-5);
+}
+
+.navigation > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--2-5);
+}
+
+.navigation a:hover {
+  transition: 0.3s;
+  color: var(--primary-700);
+}
+
+.logo-container {
+  margin: 0 20px;
+  width: var(--12);
+  height: var(--12);
+}
+
+.logo {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.navigation-buttons > a {
+  transition: 0.3s ease-in-out;
+  padding: var(--border-padding);
+  border: 1px solid hsla(0, 0%, 100%, 0.3);
+  border-radius: var(--border-radius);
+  line-height: var(--line-height-text);
+  background-color: hsla(0, 0%, 100%, 0.3);
+}
+
+.navigation-buttons > a:hover {
+  background-color: hsla(0, 0%, 100%, 0.5);
+  border-color: hsla(0, 0%, 100%, 0.5);
+}
+
+/*-------------------------------------
+	3. Footer
+--------------------------------------*/
+footer {
+  width: 100%;
+  background-color: var(--primary-950);
+}
+
+footer p {
+  color: var(--text-50);
+  font-size: var(--links);
+  font-weight: 700;
+  text-align: center;
+}
+
+/*-------------------------------------
+	4. Hero section
+--------------------------------------*/
+.hero-section {
+  position: relative;
+  height: 60vh;
+  width: 100%;
+  background-image: url("/assets/images/hero-header.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  box-shadow: var(--box-shadow);
+  overflow: hidden;
+}
+
+.hero-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
+  z-index: 10;
+}
+
+/*-------------------------------------
+	5. Content
+--------------------------------------*/
+.media-container {
+  position: relative;
+  outline: none;
+  border: none;
+  border-radius: var(--4);
+  overflow: hidden;
+  z-index: 0;
+  margin-top: var(--6);
+}
+
+.media-container video {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: var(--4);
+}
