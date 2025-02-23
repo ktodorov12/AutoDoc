@@ -5,6 +5,7 @@
 3. Footer
 4. Hero section
 5. Content
+6. Login
 ==========================================*/
 
 /* ////////COLORS//////////////////////////// */
@@ -85,6 +86,7 @@
 :root {
   /* Containers */
   --container-width-main: 1536px;
+  --container-form: 640px;
   --max-width-text: 41.625rem;
 
   /* Sizes */
@@ -174,6 +176,20 @@ ul li::before {
   content: "✓";
 }
 
+button {
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+input[type=text] {   
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 textarea {
   resize: none;
 }
@@ -186,6 +202,13 @@ textarea {
   max-width: var(--container-width-main);
   width: 100%;
   height: 100%;
+}
+
+.container-flex-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .padding-container {
@@ -360,4 +383,116 @@ footer p {
   width: 100%;
   height: auto;
   border-radius: var(--4);
+}
+
+/*-------------------------------------
+	6. Login
+--------------------------------------*/
+.authentication-container {
+  width: 100%;
+  height: 100vh;
+  background: url("/assets/images/authentication-background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.auth-holder {
+  background-color: var(--background-100);
+  width: var(--container-form);
+  height: var(--container-form);
+  border-radius: var(--border-radius);
+  gap: var(--4);
+}
+
+.authentication-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--4);
+  width: 70%;
+}
+
+.authentication-form input {
+  border: 1px solid var(--text-50);
+  border-radius: var(--btn-radius);
+  line-height: var(--line-height-text);
+  padding: 0.75rem 2rem;
+  text-align: center;
+  text-align-last: center;
+}
+
+.authentication-form input::placeholder {
+  text-align: center;
+}
+
+.authentication-form input[type=text]:focus {
+  outline: 2px solid var(--text-700);
+}
+
+.form-tools {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: var(--1);
+}
+
+.form-tools > label {
+  margin-right: auto;
+}
+
+.form-others {
+  font-size: var(--4);
+  gap: var(--2);
+}
+
+.separator {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+}
+
+.separator::before {
+  content: " ";
+  display: block;
+  height: 1px;
+  width: 43%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: gray;
+}
+
+.separator::after {
+  content: " ";
+  display: block;
+  height: 1px;
+  width: 43%;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  background: gray;
+}
+
+.auth-links {
+  width: 100%;
+  margin: var(--3) 0;
+  display: flex;
+  justify-content: space-around;
+  gap: var(--2);
+  text-align: center;
+}
+
+.auth-links a {
+  transition: 0.3s ease-in-out;
+  color: var(--text-50);
+  background-color: var(--text-500);
+  width: 100%;
+  height: 100%;
+  padding: var(--btn-padding);
+  border-radius: var(--btn-radius);
+}
+
+.auth-links a:hover {
+  background-color: var(--text-700);
 }

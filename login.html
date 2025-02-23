@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Landing Page</title>
+    <title>Login</title>
 
     <link rel="stylesheet" href="assets/style/style.css" />
     <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
@@ -24,41 +24,34 @@
       </div>
     </nav>
 
-    <!-- Hero -->
-    <div class="hero-section padding-container">
-      <div class="container">
-        <div class="hero-content">
-          <h1 class="heading-main">AutoDoc – A place to:</h1>
-          <ul>
-            <li>Automate your document workflow</li>
-            <li>Generate and manage contracts with ease</li>
-            <li>Securely collaborate and sign online</li>
-          </ul>
-          <a class="btn" href="# ">Get started -></a>
+    <div class="authentication-container">
+      <div class="container container-flex-center">
+        <div class="auth-holder container-flex-center">
+          <h1>Log in</h1>
+          <p>Enter your details to continue</p>
+          <form class="authentication-form" action="">
+            <input type="text" name="email" placeholder="Email" />
+            <input type="text" name="password" placeholder="Password" />
+            <div class="form-tools">
+              <input type="checkbox" id="rememberMe" name="rememberMe" value="remember" />
+              <label for="rememberMe">Remember me!</label>
+              <a href="#">Forgot password?</a>
+            </div>
+            <button class="btn" type="submit">Continue</button>
+
+            <div class="container-flex-center form-others">
+              <p class="separator">or</p>
+
+              <div class="auth-links">
+                <a href="">G</a>
+                <a href="">F</a>
+                <a href="">X</a>
+              </div>
+
+              <p>You don't have an account? <a href="#">Sign up!</a></p>
+            </div>
+          </form>
         </div>
-      </div>
-    </div>
-
-    <!-- Content -->
-    <div id="content" class="container padding-container">
-      <h1 class="heading">Creating documents has never been easier</h1>
-      <p class="text">Say goodbye to manual paperwork. AutoDoc helps you draft, edit, and generate documents effortlessly—saving time and reducing errors.</p>
-      <div class="media-container">
-        <video
-          autoplay
-          playsinline
-          loop
-          src="https://cdn.spline.design/_assets/_videos/spline_beta_release.mp4"
-          poster="assets/images/authentication-background.png"
-          width="1080"
-          height="634"></video>
-      </div>
-    </div>
-
-    <!-- Features -->
-    <div id="features" class="container padding-container">
-      <div class="flex-container">
-        <h1 class="heading">Tools to ease document creation</h1>
       </div>
     </div>
 
