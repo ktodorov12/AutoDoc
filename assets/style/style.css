@@ -6,6 +6,7 @@
 4. Hero section
 5. Content
 6. Login
+7. Register
 ==========================================*/
 
 /* ////////COLORS//////////////////////////// */
@@ -495,4 +496,21 @@ footer p {
 
 .auth-links a:hover {
   background-color: var(--text-700);
+}
+
+.form-change-auth {
+  text-align: center;
+  font-size: var(--4);
+}
+
+/*-------------------------------------
+	7. Register
+--------------------------------------*/
+.form-names-container {
+  display: flex;
+  gap: var(--2);
+}
+
+.form-names-container input[type=text] {
+  width: 100%;
 }
