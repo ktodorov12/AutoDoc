@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" href="assets/style/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon-16x16.png" />
+  </head>
+  <body>
+    <!-- Nav -->
+    <nav id="nav" class="navigation-edit">
+      <a href="/landing-page.html">Home</a>
+
+      <a href="#content">Content</a>
+      <a href="#tools">Tools</a>
+    </nav>
+    <!-- Ribbon -->
+    <div class="ribbon">
+      <button onclick="document.execCommand('undo')">Undo</button>
+      <button onclick="document.execCommand('redo')">Redo</button>
+      <button onclick="">Save</button>
+      <button onclick="document.execCommand('copy')">Copy</button>
+      <button onclick="document.execCommand('paste')">Paste</button>
+      <select name="field-size" id="fieldSize">
+        <option value="a4">A4</option>
+        <option value="a3">A3</option>
+      </select>
+    </div>
+
+    <div class="document-editor-container">
+      <!-- Folders -->
+      <aside class="sidebar">
+        <div class="sidebar-container container-flex-start">
+          <input class="folder-search" type="text" name="search" placeholder="search" />
+
+          <div class="folder-container">
+            <div class="folder-structure">
+              <div class="folder">
+                <div class="folder-icon-wrapper">
+                  <img class="folder-icon" src="assets/images/folder.png" alt="Simple folder image" />
+                </div>
+                <p class="folder-name">Folder name</p>
+                <img class="folder-arrow down" src="assets/images/arrow down.png" alt="Arrow down" />
+              </div>
+
+              <div class="folder-structure nested">
+                <div class="folder">
+                  <div class="folder-icon-wrapper">
+                    <img class="folder-icon" src="assets/images/folder.png" alt="Simple folder image" />
+                  </div>
+                  <p class="folder-name">Folder name</p>
+                  <img class="folder-arrow down" src="assets/images/arrow down.png" alt="Arrow down" />
+                </div>
+
+                <div class="folder-structure nested">
+                  <div class="folder">
+                    <div class="folder-icon-wrapper">
+                      <img class="folder-icon" src="assets/images/clipboard.png" alt="Clipboard text image" />
+                    </div>
+                    <p class="folder-name">Project</p>
+                    <img class="folder-arrow down" src="assets/images/arrow down.png" alt="Arrow down" />
+                  </div>
+
+                  <div class="project-structure nested">
+                    <div class="folder">
+                      <div class="folder-icon-wrapper">
+                        <img class="folder-icon" src="assets/images/file.png" alt="File image" />
+                      </div>
+                      <p class="folder-name">File name</p>
+                    </div>
+
+                    <div class="folder">
+                      <div class="folder-icon-wrapper">
+                        <img class="folder-icon" src="assets/images/write.png" alt="File plus image" />
+                      </div>
+                      <p class="folder-name">Form</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="folder-structure nested">
+                <div class="folder">
+                  <div class="folder-icon-wrapper">
+                    <img class="folder-icon" src="assets/images/folder.png" alt="Simple folder image" />
+                  </div>
+                  <p class="folder-name">Folder name</p>
+                  <img class="folder-arrow down" src="assets/images/arrow down.png" alt="Arrow down" />
+                </div>
+
+                <div class="folder-structure nested">
+                  <div class="folder">
+                    <div class="folder-icon-wrapper">
+                      <img class="folder-icon" src="assets/images/clipboard.png" alt="Clipboard text image" />
+                    </div>
+                    <p class="folder-name">Project</p>
+                    <img class="folder-arrow down" src="assets/images/arrow down.png" alt="Arrow down" />
+                  </div>
+
+                  <div class="project-structure nested">
+                    <div class="folder">
+                      <div class="folder-icon-wrapper">
+                        <img class="folder-icon" src="assets/images/file.png" alt="File image" />
+                      </div>
+                      <p class="folder-name">File name</p>
+                    </div>
+
+                    <div class="folder">
+                      <div class="folder-icon-wrapper">
+                        <img class="folder-icon" src="assets/images/write.png" alt="File plus image" />
+                      </div>
+                      <p class="folder-name">Form</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="folder-structure">
+              <div class="folder">
+                <div class="folder-icon-wrapper">
+                  <img class="folder-icon" src="assets/images/folder.png" alt="Simple folder image" />
+                </div>
+                <p class="folder-name">Folder name</p>
+                <img class="folder-arrow right" src="assets/images/arrow right.png" alt="Arrow right" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- Document editor -->
+      <div id="editor-container">
+        <div id="page-count">0/10</div>
+        <div contenteditable="true" id="editor" class="editor">Type your text here...<br /></div>
+      </div>
+
+      <!-- Tools -->
+      <aside class="sidebar">
+        <div class="sidebar-container container-flex-space-between">
+          <div class="field-markers">
+            <div class="form-container">
+              <div class="form-grid" id="formGrid">
+                <div class="form-content">
+                  <div class="form-row">
+                    <div class="form-name" contenteditable="true">Field Name</div>
+                  </div>
+                  <div class="form-fields">
+                    <div class="form-field" contenteditable="true"></div>
+                    <div class="add-field">+</div>
+                  </div>
+                </div>
+              </div>
+              <button class="form-button" id="addMarker"><img class="form-img" src="assets/images/plus.png" alt="Download" />add marker</button>
+            </div>
+            <button class="form-button"><img class="form-img" src="assets/images/form_download.png" alt="Download" />Generate Form</button>
+          </div>
+
+          <div class="text-tools">
+            <div class="font-container">
+              <label for="fontFamily">Font</label>
+              <select name="fontFamily" id="fontFamily">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Verdana">Verdana</option>
+              </select>
+            </div>
+
+            <div class="font-container">
+              <label for="fontSize">Font Size</label>
+              <select name="fontSize" id="fontSize">
+                <option value="12px">12</option>
+                <option value="14px">14</option>
+                <option value="16px">16</option>
+                <option value="18px">18</option>
+              </select>
+            </div>
+
+            <div class="font-container">
+              <label for="fontColor">Font Color</label>
+              <input type="color" id="fontColor" onchange="changeColor(this.value)" />
+            </div>
+
+            <div class="container-flex-center">
+              <div class="font-buttons-style">
+                <button onclick="formatText('bold')"><b>B</b></button>
+                <button onclick="formatText('italic')"><i>I</i></button>
+                <button onclick="formatText('underline')"><u>U</u></button>
+              </div>
+
+              <div class="font-buttons-position">
+                <button onclick="formatText('justifyLeft')">Left</button>
+                <button onclick="formatText('justifyCenter')">Center</button>
+                <button onclick="formatText('justifyRight')">Right</button>
+              </div>
+            </div>
+          </div>
+
+          <button id="downloadFile" class="form-button"><img class="form-img" src="assets/images/download.png" alt="download" />Download File</button>
+        </div>
+      </aside>
+    </div>
+
+    <footer>
+      <div class="container">
+        <p>@ AutoDoc</p>
+      </div>
+    </footer>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", () => {
+        const pages = document.querySelectorAll(".editor");
+
+        pages.forEach((p) => {
+          p.addEventListener("keydown", (e) => {
+            if (e.key == "Enter" || e.keyCode === 13) {
+              e.preventDefault();
+
+              const selection = window.getSelection();
+              const range = selection.getRangeAt(0);
+
+              const br = document.createElement("br");
+              range.insertNode(br);
+
+              range.setStartAfter(br);
+              range.setEndAfter(br);
+              selection.removeAllRanges();
+              selection.addRange(range);
+              e.stopPropagation();
+            }
+          });
+        });
+      });
+
+      document.getElementById("addMarker").addEventListener("click", () => {
+        const formGrid = document.getElementById("formGrid");
+
+        const newContent = document.createElement("div");
+        newContent.classList.add("form-content")
+
+        const newRow = document.createElement("div");
+        newRow.classList.add("form-row");
+
+        const newName = document.createElement("div");
+        newName.classList.add("form-name");
+        newName.contentEditable = "true";
+        newName.textContent = "New Field";
+
+        const newFields = document.createElement("div");
+        newFields.classList.add("form-fields");
+
+        const firstField = document.createElement("div");
+        firstField.classList.add("form-field");
+        firstField.contentEditable = "true";
+
+        // Add "+" button to add more fields in the same row
+        const addField = document.createElement("div");
+        addField.classList.add("add-field");
+        addField.textContent = "+";
+        addField.addEventListener("click", function () {
+          addNewField(newFields);
+        });
+
+        function addNewField(fieldContainer) {
+          const newField = document.createElement("div");
+          newField.classList.add("form-field");
+          newField.contentEditable = "true";
+
+          fieldContainer.insertBefore(newField, fieldContainer.lastElementChild);
+        }
+
+        newFields.appendChild(firstField);
+        newFields.appendChild(addField);
+
+        // Append everything
+        newRow.appendChild(newName);
+        newRow.appendChild(newFields);
+
+        newContent.appendChild(newRow);
+        formGrid.appendChild(newContent);
+      });
+    </script>
+  </body>
+</html>

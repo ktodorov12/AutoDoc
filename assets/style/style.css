@@ -7,6 +7,7 @@
 5. Content
 6. Login
 7. Register
+8. Dashboard
 ==========================================*/
 
 /* ////////COLORS//////////////////////////// */
@@ -185,7 +186,7 @@ button {
   cursor: pointer;
 }
 
-input[type=text] {   
+input[type="text"] {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -210,6 +211,20 @@ textarea {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.container-flex-space-between {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.container-flex-start {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
 }
 
 .padding-container {
@@ -425,7 +440,7 @@ footer p {
   text-align: center;
 }
 
-.authentication-form input[type=text]:focus {
+.authentication-form input[type="text"]:focus {
   outline: 2px solid var(--text-700);
 }
 
@@ -511,6 +526,337 @@ footer p {
   gap: var(--2);
 }
 
-.form-names-container input[type=text] {
+.form-names-container input[type="text"] {
   width: 100%;
+}
+
+/*-------------------------------------
+	8. Dashboard
+--------------------------------------*/
+.document-editor-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Ribbon */
+.ribbon {
+  position: fixed;
+  top: 30px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #f3f3f3;
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+  z-index: 99;
+  height: 40px;
+}
+
+.ribbon button {
+  padding: 5px;
+  border: 1px solid #ccc;
+  cursor: pointer;
+  background: white;
+}
+
+.ribbon button:hover {
+  background: #e0e0e0;
+}
+
+/* Sidebars - general */
+.sidebar {
+  position: sticky;
+  top: 70px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 15%;
+  width: 15%;
+  background-color: var(--background-200);
+  height: calc(100vh - 70px); /* Prevents overlapping with footer */
+  overflow-y: auto;
+  z-index: 98;
+}
+
+.sidebar-container {
+  width: 90%;
+  max-width: 90%;
+  height: 90%;
+  max-height: 90%;
+  gap: var(--4);
+}
+
+/* Sidebar-left */
+.folder-search {
+  border: 1px solid #fff;
+  border-radius: 0.3rem;
+  padding: 0.1rem 1rem;
+  text-align: center;
+  text-align-last: center;
+  margin-top: var(--4);
+}
+
+.folder-search:focus {
+  outline: 1px solid var(--text-700);
+}
+
+.folder-structure {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.folder {
+  display: flex;
+  align-items: center;
+  gap: var(--3);
+  margin: var(--3);
+}
+
+.folder-icon-wrapper {
+  position: relative;
+  display: inline-block;
+  width: var(--5);
+  height: var(--5);
+}
+
+.nested .folder .folder-icon-wrapper::before {
+  content: "";
+  position: absolute;
+  left: -0.5em;
+  top: 0;
+  transform: translateY(-70%);
+  width: 0.3em;
+  height: 2em;
+  border-left: 1px solid black;
+  border-bottom: 1px solid black;
+}
+
+.folder-icon {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+}
+
+.folder-arrow {
+  width: 30px;
+  height: 30px;
+}
+
+.folder-name {
+  font-size: var(--links);
+}
+
+.nested {
+  padding-left: 1em; /* Each child inherits and increases padding */
+  position: relative;
+}
+
+/* Editor */
+#editor-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  gap: 20px;
+  padding-bottom: 50px;
+}
+
+.editor {
+  width: 794px;
+  height: 1123px; /* A4 height */
+  background: #fff;
+  padding: 2cm;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+  border-radius: 3px;
+  outline: none;
+  overflow: hidden;
+  font-family: "Times New Roman", Times, serif;
+  font-size: 12pt;
+  line-height: 1.5;
+  margin-top: 90px;
+  border: 1px solid #ccc;
+}
+
+#page-count {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  background-color: var(--background-200);
+  padding: 5px;
+  font-size: var(--4);
+  border-radius: 10px;
+}
+
+/* Sidebar Right */
+.form-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: var(--2);
+  font-size: var(--links);
+}
+
+.form-img {
+  text-align: center;
+  width: var(--5);
+  height: var(--5);
+}
+
+#downloadFile {
+  margin-top: auto; /* Pushes it to the bottom */
+  padding: 10px;
+  background-color: orange;
+  text-align: center;
+}
+
+/* *Text tools* */
+.text-tools {
+  display: flex;
+  flex-direction: column;
+  gap: var(--4);
+  flex-grow: 1;
+}
+
+.font-buttons-style {
+  display: flex;
+  gap: var(--4);
+}
+
+.font-buttons-style button {
+  background-color: #fff;
+  padding: var(--border-padding);
+  border-radius: var(--btn-radius);
+}
+
+.font-buttons-position {
+  display: flex;
+  gap: var(--4);
+}
+
+.font-buttons-position button {
+  font-size: var(--3);
+  background-color: #fff;
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--btn-radius);
+  margin-top: 10px;
+}
+
+.font-container {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  gap: var(--4);
+  font-size: var(--links);
+}
+
+/* *Form* */
+.field-markers {
+  flex-grow: 1;
+  padding-bottom: 10px;
+}
+
+.form-container {
+  width: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  white-space: nowrap;
+  padding: 5px;
+}
+
+.form-grid {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-content {
+  display: flex;
+  gap: var(--1);
+}
+
+.form-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 3px;
+}
+
+.form-name {
+  width: 100px;
+  min-height: 24px;
+  padding: 4px;
+  font-weight: bold;
+  background: #f0f0f0;
+  border: 1px solid #ccc;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.form-fields {
+  display: flex;
+  gap: 3px;
+}
+
+.form-field {
+  min-width: 80px;
+  min-height: 24px;
+  padding: 4px;
+  border: 1px solid #ccc;
+  cursor: text;
+  font-size: 12px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.add-field {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #e0e0e0;
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.add-field:hover {
+  background: #d0d0d0;
+}
+
+#addMarker {
+  margin-top: 5px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Temporary */
+.navigation-edit {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+  border-bottom: 2px solid #ccc;
+  z-index: 100;
+  height: 30px;
+  font-size: var(--4);
+  background-color: #04192f;
 }
