@@ -758,8 +758,15 @@ footer p {
 
 /* *Form* */
 .field-markers {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+  gap: var(--4);
   flex-grow: 1;
-  padding-bottom: 10px;
+  padding-bottom: 10px;;
+  width: 100%;
+  margin-top: var(--4);
 }
 
 .form-container {
