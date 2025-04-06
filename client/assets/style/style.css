@@ -7,7 +7,13 @@
 5. Content
 6. Login
 7. Register
-8. Dashboard
+8. Document Editor
+    8.1. Ribbon
+    8.2. Sidebars - general
+      8.2.1. Sidebar-left
+      8.2.2. Editor
+      8.2.3. Sidebar-right
+
 ==========================================*/
 
 /* ////////COLORS//////////////////////////// */
@@ -531,14 +537,14 @@ footer p {
 }
 
 /*-------------------------------------
-	8. Dashboard
+	8. Document Editor
 --------------------------------------*/
 .document-editor-container {
   display: flex;
   justify-content: space-between;
 }
 
-/* Ribbon */
+/* 8.1. Ribbon */
 .ribbon {
   position: fixed;
   top: 30px;
@@ -566,7 +572,7 @@ footer p {
   background: #e0e0e0;
 }
 
-/* Sidebars - general */
+/* 8.2. Sidebars - general */
 .sidebar {
   position: sticky;
   top: 70px;
@@ -574,8 +580,8 @@ footer p {
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  max-width: 15%;
-  width: 15%;
+  max-width: 40%;
+  width: 40%;
   background-color: var(--background-200);
   height: calc(100vh - 70px); /* Prevents overlapping with footer */
   overflow-y: auto;
@@ -590,7 +596,7 @@ footer p {
   gap: var(--4);
 }
 
-/* Sidebar-left */
+/* 8.2.1. Sidebar-left */
 .folder-search {
   border: 1px solid #fff;
   border-radius: 0.3rem;
@@ -657,7 +663,7 @@ footer p {
   position: relative;
 }
 
-/* Editor */
+/* 8.2.2. Editor */
 #editor-container {
   display: flex;
   flex-direction: column;
@@ -693,7 +699,7 @@ footer p {
   border-radius: 10px;
 }
 
-/* Sidebar Right */
+/* 8.2.3. Sidebar-right */
 .form-button {
   display: flex;
   flex-direction: row;
@@ -756,8 +762,8 @@ footer p {
   font-size: var(--links);
 }
 
-/* *Form* */
-.field-markers {
+/* *Markers* */
+.markers {
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -767,9 +773,11 @@ footer p {
   padding-bottom: 10px;;
   width: 100%;
   margin-top: var(--4);
+
+  max-height: 70%;
 }
 
-.form-container {
+.markers-container {
   width: 100%;
   overflow-x: auto;
   overflow-y: auto;
@@ -777,25 +785,20 @@ footer p {
   padding: 5px;
 }
 
-.form-grid {
+.markers-grid {
   display: flex;
   flex-direction: column;
+  gap: var(--0-5);
 }
 
-.form-content {
+.marker-content {
   display: flex;
   gap: var(--1);
 }
 
-.form-row {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  gap: 3px;
-}
-
-.form-name {
-  width: 100px;
+.marker-name {
+  min-width: 120px;
+  max-width: 120px;
   min-height: 24px;
   padding: 4px;
   font-weight: bold;
@@ -808,13 +811,9 @@ footer p {
   justify-content: center;
 }
 
-.form-fields {
-  display: flex;
-  gap: 3px;
-}
-
-.form-field {
-  min-width: 80px;
+.marker-field {
+  min-width: 100px;
+  max-width: 100px;
   min-height: 24px;
   padding: 4px;
   border: 1px solid #ccc;
@@ -827,7 +826,7 @@ footer p {
 }
 
 .add-field {
-  width: 24px;
+  min-width: 24px;
   height: 24px;
   display: flex;
   align-items: center;

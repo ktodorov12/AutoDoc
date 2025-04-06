@@ -1,11 +1,11 @@
-import FieldMarkers from "./field-markers/FieldMarkers";
+import Markers from "./markers/Markers";
 import TextTools from "./text-tools/TextTools";
 
 export default function SidebarRight() {
   return (
     <aside className="sidebar">
       <div className="sidebar-container container-flex-space-between">
-        <FieldMarkers />
+        <Markers />
 
         <TextTools />
 
