@@ -1,3 +1,5 @@
+import { Link } from "react-router";
+
 export default function LandingPage() {
   return (
     <>
@@ -10,16 +12,19 @@ export default function LandingPage() {
               <li>Generate and manage contracts with ease</li>
               <li>Securely collaborate and sign online</li>
             </ul>
-            <a className="btn" href="# ">
-              Get started -
-            </a>
+            <Link className="btn" to="/document-editor">
+              Get started -{">"}
+            </Link>
           </div>
         </div>
       </div>
 
       <div id="content" className="container padding-container">
         <h1 className="heading">Creating documents has never been easier</h1>
-        <p className="text">Say goodbye to manual paperwork. AutoDoc helps you draft, edit, and generate documents effortlessly—saving time and reducing errors.</p>
+        <p className="text">
+          Say goodbye to manual paperwork. AutoDoc helps you draft, edit, and generate
+          documents effortlessly—saving time and reducing errors.
+        </p>
         <div className="media-container">
           <video
             autoPlay

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import useAuth from "../../hooks/auth/useAuth";
 
 const initialValues = {
@@ -22,6 +23,7 @@ export default function Login() {
             <div className="form-tools">
               <input type="checkbox" id="rememberMe" name="rememberMe" value="remember" />
               <label htmlFor="rememberMe">Remember me!</label>
+              {/* TODO: add link and logic */}
               <a href="#">Forgot password?</a>
             </div>
             {/*  */}
@@ -40,9 +42,10 @@ export default function Login() {
                 <a href="#">X</a>
               </div>
             </div>
+            {/*  */}
 
             <p className="form-change-auth">
-              You don&apos;t have an account? <a href="/register.html">Sign up!</a>
+              You don&apos;t have an account? <Link to="/register">Sign up!</Link>
             </p>
           </form>
         </div>

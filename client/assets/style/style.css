@@ -347,6 +347,11 @@ textarea {
   border-color: hsla(0, 0%, 100%, 0.5);
 }
 
+.navigation-buttons  a.active {
+  background-color: hsla(0, 0%, 100%, 0.8);
+  border-color: hsla(0, 0%, 100%, 0.8);
+}
+
 /*-------------------------------------
 	3. Footer
 --------------------------------------*/

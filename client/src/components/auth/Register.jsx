@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import useAuth from "../../hooks/auth/useAuth";
 
 const initialValues = {
@@ -38,7 +39,7 @@ export default function Register() {
               Continue
             </button>
             <p className="form-change-auth">
-              You already have an account? <a href="/login.html">Log in!</a>
+              You already have an account? <Link to="/login">Log in!</Link>
             </p>
           </form>
         </div>
