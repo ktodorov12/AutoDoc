@@ -1,6 +1,6 @@
 import Ribbon from "./ribbon/Ribbon";
 import SidebarLeft from "./sidebar-left/SidebarLeft";
-import SidebarRight from "./sidevar-right/SidebarRight";
+import SidebarRight from "./sidebar-right/SidebarRight";
 
 export default function DocumentEditor() {
   return (
