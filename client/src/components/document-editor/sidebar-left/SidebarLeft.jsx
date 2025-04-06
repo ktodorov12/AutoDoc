@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import FolderStructure from "./folder/FolderStructure";
+import FolderStructure from "./folder-structure/FolderStructure";
 
 const initialValues = [
   {
