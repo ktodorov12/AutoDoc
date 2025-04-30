@@ -16,15 +16,25 @@ export default function useAuth(initialValues) {
     setInputs({ ...inputs, [inputName]: newVal });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e, endpoint) {
     e.preventDefault();
 
-    // TODO: add logic
-    console.log("Sent------");
-    console.log(inputs);
-    //
-
-    setInputs(initialValues);
+    try {
+      // TODO: fix logic
+      await fetch(`http://localhost:5000/${endpoint}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(inputs),
+      });
+      //
+    } catch (error) {
+      // TODO: add error handling
+      console.log(error);
+    } finally {
+      setInputs(initialValues);
+    }
   }
 
   return { inputs, handleChange, handleSubmit };

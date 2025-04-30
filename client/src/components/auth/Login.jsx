@@ -15,7 +15,7 @@ export default function Login() {
         <div className="auth-holder container-flex-center">
           <h1>Log in</h1>
           <p>Enter your details to continue</p>
-          <form className="authentication-form" onSubmit={handleSubmit}>
+          <form className="authentication-form" onSubmit={(e) => handleSubmit(e, "login")}>
             <input type="text" name="email" placeholder="Email" onChange={handleChange} value={inputs.email} />
             <input type="text" name="password" placeholder="Password" onChange={handleChange} value={inputs.password} />
 

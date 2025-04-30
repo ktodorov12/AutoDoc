@@ -18,7 +18,7 @@ export default function Register() {
         <div className="auth-holder container-flex-center">
           <h1>Register</h1>
           <p>Enter your details to continue</p>
-          <form className="authentication-form" onSubmit={handleSubmit}>
+          <form className="authentication-form" onSubmit={(e) => handleSubmit(e, "register")}>
             <div className="form-names-container">
               <input type="text" name="firstName" id="firstName" placeholder="First Name" onChange={handleChange} value={inputs.firstName} />
               <input type="text" name="lastName" id="lastName" placeholder="Last Name" onChange={handleChange} value={inputs.lastName} />
