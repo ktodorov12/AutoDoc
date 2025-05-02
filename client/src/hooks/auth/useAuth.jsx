@@ -1,5 +1,7 @@
 import { useState } from "react";
 
+import { post } from "../../api/requester";
+
 const whitespaceRemover = (val) => val.replace(/\s/g, "");
 
 export default function useAuth(initialValues) {
@@ -21,14 +23,7 @@ export default function useAuth(initialValues) {
 
     try {
       // TODO: fix logic
-      await fetch(`http://localhost:5000/${endpoint}`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(inputs),
-      });
-      //
+      const response = await post(endpoint, inputs);
     } catch (error) {
       // TODO: add error handling
       console.log(error);
